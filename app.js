@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const index = require('./routes/index');
+const devices = require('./routes/devices');
 const login = require('./routes/login');
 const users = require('./routes/users');
 
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/', index);
+app.use('/devices', devices);
 app.use('/login', login);
 app.use('/users', users);
 
